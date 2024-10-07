@@ -1,8 +1,8 @@
 FROM debian:bullseye
 
-# Install nginx, vim, curl, openssl (for TLS1.3)
-RUN apt update && apt upgrade \
-	&& apt install -y nginx vim curl openssl
+# Install nginx, vim, curl, openssl (for TLS1.2/1.3)
+RUN apt update -y && apt upgrade -y
+RUN apt install -y nginx vim curl openssl
 RUN apt clean 
 RUN mkdir -p /etc/nginx/ssl 
 
